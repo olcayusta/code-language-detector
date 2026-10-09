@@ -1,0 +1,21 @@
+{
+  "name": "code-language-detector",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Independent, rule-based TypeScript code language detector",
+  "engines": { "node": ">=22" },
+  "exports": {
+    ".": { "types": "./dist/index.d.ts", "import": "./dist/index.js" }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "npm run build && node --test tests/*.test.mjs",
+    "demo": "npm run build && node scripts/serve.mjs"
+  },
+  "devDependencies": {
+    "linkedom": "^0.18.12",
+    "typescript": "^7.0.2"
+  }
+}

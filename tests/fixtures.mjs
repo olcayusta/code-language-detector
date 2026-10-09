@@ -1,0 +1,15 @@
+export const fixtures = [
+  ['html', '<div class="card">Hello</div>', '<!DOCTYPE html>\n<html><head><title>Demo</title></head><body><p>Hello</p></body></html>'],
+  ['css', '.card { color: red; padding: 8px; }', '@media (min-width: 800px) {\n  .card { display: grid; gap: 8px; }\n}'],
+  ['javascript', 'console.log("hello");', 'const message = "Hello";\nfunction greet() { console.log(message); }\ngreet();'],
+  ['typescript', 'const count: number = 1;', 'interface User {\n  name: string;\n  age: number;\n}\nconst user: User = { name: "Ada", age: 28 };\nconsole.log(user);'],
+  ['php', '<?php echo "Hello";', '<?php\n$message = "Hello";\necho $message;'],
+  ['python', 'def greet(name): print(name)', 'def greet(name):\n    print(name)\n\nif __name__ == "__main__":\n    greet("Ada")'],
+  ['sql', 'SELECT * FROM users WHERE id = 1;', 'CREATE TABLE users (id INT, name VARCHAR(50));\nINSERT INTO users VALUES (1, \'Ada\');\nSELECT name FROM users;'],
+  ['json', '{"name":"Ada","active":true}', '{\n  "name": "Ada",\n  "skills": ["TS", "SQL"],\n  "meta": {"age": 28}\n}'],
+  ['xml', '<catalog><book id="1">Hello</book></catalog>', '<?xml version="1.0"?>\n<catalog>\n  <book id="1">Hello</book>\n</catalog>'],
+  ['java', 'System.out.println("Hello");', 'import java.util.List;\npublic class Main {\n  public static void main(String[] args) {\n    System.out.println("Hello");\n  }\n}'],
+  ['c', '#include <stdio.h>', '#include <stdio.h>\nint main(void) {\n  printf("Hello\\n");\n  return 0;\n}'],
+  ['cpp', 'std::cout << "Hello";', '#include <iostream>\nint main() {\n  std::cout << "Hello" << std::endl;\n  return 0;\n}'],
+  ['csharp', 'Console.WriteLine("Hello");', 'using System;\nclass Program {\n  static void Main(string[] args) {\n    Console.WriteLine("Hello");\n  }\n}'],
+];
