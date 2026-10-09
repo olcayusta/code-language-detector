@@ -1,0 +1,1064 @@
+{
+  "metadata": {
+    "variant": "feature/v2-accuracy",
+    "nodeVersion": "v24.16.0",
+    "corpusSha256": "5f5b2cc2aed84df1b535b82cb04fb0cd2ea87d96bbe541138c8f5379ee74b6c4"
+  },
+  "original": {
+    "correct": 26,
+    "total": 26,
+    "byLanguage": {
+      "html": {
+        "correct": 2,
+        "total": 2
+      },
+      "css": {
+        "correct": 2,
+        "total": 2
+      },
+      "javascript": {
+        "correct": 2,
+        "total": 2
+      },
+      "typescript": {
+        "correct": 2,
+        "total": 2
+      },
+      "php": {
+        "correct": 2,
+        "total": 2
+      },
+      "python": {
+        "correct": 2,
+        "total": 2
+      },
+      "sql": {
+        "correct": 2,
+        "total": 2
+      },
+      "json": {
+        "correct": 2,
+        "total": 2
+      },
+      "xml": {
+        "correct": 2,
+        "total": 2
+      },
+      "java": {
+        "correct": 2,
+        "total": 2
+      },
+      "c": {
+        "correct": 2,
+        "total": 2
+      },
+      "cpp": {
+        "correct": 2,
+        "total": 2
+      },
+      "csharp": {
+        "correct": 2,
+        "total": 2
+      }
+    },
+    "results": [
+      {
+        "id": "html/original-0",
+        "expected": "html",
+        "actual": "html",
+        "score": 5,
+        "correct": true
+      },
+      {
+        "id": "html/original-1",
+        "expected": "html",
+        "actual": "html",
+        "score": 18,
+        "correct": true
+      },
+      {
+        "id": "css/original-0",
+        "expected": "css",
+        "actual": "css",
+        "score": 5,
+        "correct": true
+      },
+      {
+        "id": "css/original-1",
+        "expected": "css",
+        "actual": "css",
+        "score": 10,
+        "correct": true
+      },
+      {
+        "id": "javascript/original-0",
+        "expected": "javascript",
+        "actual": "javascript",
+        "score": 5,
+        "correct": true
+      },
+      {
+        "id": "javascript/original-1",
+        "expected": "javascript",
+        "actual": "javascript",
+        "score": 7,
+        "correct": true
+      },
+      {
+        "id": "typescript/original-0",
+        "expected": "typescript",
+        "actual": "typescript",
+        "score": 5,
+        "correct": true
+      },
+      {
+        "id": "typescript/original-1",
+        "expected": "typescript",
+        "actual": "typescript",
+        "score": 15,
+        "correct": true
+      },
+      {
+        "id": "php/original-0",
+        "expected": "php",
+        "actual": "php",
+        "score": 13,
+        "correct": true
+      },
+      {
+        "id": "php/original-1",
+        "expected": "php",
+        "actual": "php",
+        "score": 15,
+        "correct": true
+      },
+      {
+        "id": "python/original-0",
+        "expected": "python",
+        "actual": "python",
+        "score": 5,
+        "correct": true
+      },
+      {
+        "id": "python/original-1",
+        "expected": "python",
+        "actual": "python",
+        "score": 16,
+        "correct": true
+      },
+      {
+        "id": "sql/original-0",
+        "expected": "sql",
+        "actual": "sql",
+        "score": 6,
+        "correct": true
+      },
+      {
+        "id": "sql/original-1",
+        "expected": "sql",
+        "actual": "sql",
+        "score": 16,
+        "correct": true
+      },
+      {
+        "id": "json/original-0",
+        "expected": "json",
+        "actual": "json",
+        "score": 10,
+        "correct": true
+      },
+      {
+        "id": "json/original-1",
+        "expected": "json",
+        "actual": "json",
+        "score": 10,
+        "correct": true
+      },
+      {
+        "id": "xml/original-0",
+        "expected": "xml",
+        "actual": "xml",
+        "score": 5,
+        "correct": true
+      },
+      {
+        "id": "xml/original-1",
+        "expected": "xml",
+        "actual": "xml",
+        "score": 15,
+        "correct": true
+      },
+      {
+        "id": "java/original-0",
+        "expected": "java",
+        "actual": "java",
+        "score": 5,
+        "correct": true
+      },
+      {
+        "id": "java/original-1",
+        "expected": "java",
+        "actual": "java",
+        "score": 16,
+        "correct": true
+      },
+      {
+        "id": "c/original-0",
+        "expected": "c",
+        "actual": "c",
+        "score": 5,
+        "correct": true
+      },
+      {
+        "id": "c/original-1",
+        "expected": "c",
+        "actual": "c",
+        "score": 9,
+        "correct": true
+      },
+      {
+        "id": "cpp/original-0",
+        "expected": "cpp",
+        "actual": "cpp",
+        "score": 5,
+        "correct": true
+      },
+      {
+        "id": "cpp/original-1",
+        "expected": "cpp",
+        "actual": "cpp",
+        "score": 11,
+        "correct": true
+      },
+      {
+        "id": "csharp/original-0",
+        "expected": "csharp",
+        "actual": "csharp",
+        "score": 5,
+        "correct": true
+      },
+      {
+        "id": "csharp/original-1",
+        "expected": "csharp",
+        "actual": "csharp",
+        "score": 16,
+        "correct": true
+      }
+    ]
+  },
+  "regression": {
+    "correct": 102,
+    "total": 102,
+    "byLanguage": {
+      "javascript": {
+        "correct": 8,
+        "total": 8
+      },
+      "typescript": {
+        "correct": 8,
+        "total": 8
+      },
+      "c": {
+        "correct": 6,
+        "total": 6
+      },
+      "cpp": {
+        "correct": 7,
+        "total": 7
+      },
+      "java": {
+        "correct": 7,
+        "total": 7
+      },
+      "csharp": {
+        "correct": 7,
+        "total": 7
+      },
+      "html": {
+        "correct": 6,
+        "total": 6
+      },
+      "xml": {
+        "correct": 6,
+        "total": 6
+      },
+      "json": {
+        "correct": 5,
+        "total": 5
+      },
+      "css": {
+        "correct": 5,
+        "total": 5
+      },
+      "python": {
+        "correct": 6,
+        "total": 6
+      },
+      "php": {
+        "correct": 5,
+        "total": 5
+      },
+      "sql": {
+        "correct": 6,
+        "total": 6
+      },
+      "unknown": {
+        "correct": 20,
+        "total": 20
+      }
+    },
+    "results": [
+      {
+        "id": "javascript/async-fetch",
+        "expected": "javascript",
+        "actual": "javascript",
+        "score": 7,
+        "correct": true
+      },
+      {
+        "id": "javascript/commonjs",
+        "expected": "javascript",
+        "actual": "javascript",
+        "score": 8,
+        "correct": true
+      },
+      {
+        "id": "javascript/object-type-names",
+        "expected": "javascript",
+        "actual": "javascript",
+        "score": 6,
+        "correct": true
+      },
+      {
+        "id": "javascript/object-method",
+        "expected": "javascript",
+        "actual": "javascript",
+        "score": 8,
+        "correct": true
+      },
+      {
+        "id": "javascript/import-alias",
+        "expected": "javascript",
+        "actual": "javascript",
+        "score": 8,
+        "correct": true
+      },
+      {
+        "id": "javascript/regex-payload",
+        "expected": "javascript",
+        "actual": "javascript",
+        "score": 6,
+        "correct": true
+      },
+      {
+        "id": "javascript/regex-comment-text",
+        "expected": "javascript",
+        "actual": "javascript",
+        "score": 6,
+        "correct": true
+      },
+      {
+        "id": "javascript/json-in-function",
+        "expected": "javascript",
+        "actual": "javascript",
+        "score": 6,
+        "correct": true
+      },
+      {
+        "id": "typescript/generic-interface",
+        "expected": "typescript",
+        "actual": "typescript",
+        "score": 5,
+        "correct": true
+      },
+      {
+        "id": "typescript/generic-function",
+        "expected": "typescript",
+        "actual": "typescript",
+        "score": 8,
+        "correct": true
+      },
+      {
+        "id": "typescript/custom-parameters",
+        "expected": "typescript",
+        "actual": "typescript",
+        "score": 6,
+        "correct": true
+      },
+      {
+        "id": "typescript/optional-parameter",
+        "expected": "typescript",
+        "actual": "typescript",
+        "score": 11,
+        "correct": true
+      },
+      {
+        "id": "typescript/satisfies",
+        "expected": "typescript",
+        "actual": "typescript",
+        "score": 6,
+        "correct": true
+      },
+      {
+        "id": "typescript/assertion",
+        "expected": "typescript",
+        "actual": "typescript",
+        "score": 11,
+        "correct": true
+      },
+      {
+        "id": "typescript/readonly",
+        "expected": "typescript",
+        "actual": "typescript",
+        "score": 5,
+        "correct": true
+      },
+      {
+        "id": "typescript/generic-arrow",
+        "expected": "typescript",
+        "actual": "typescript",
+        "score": 8,
+        "correct": true
+      },
+      {
+        "id": "c/file-io",
+        "expected": "c",
+        "actual": "c",
+        "score": 6,
+        "correct": true
+      },
+      {
+        "id": "c/allocation",
+        "expected": "c",
+        "actual": "c",
+        "score": 10,
+        "correct": true
+      },
+      {
+        "id": "c/designated-initializer",
+        "expected": "c",
+        "actual": "c",
+        "score": 8,
+        "correct": true
+      },
+      {
+        "id": "c/c-standard",
+        "expected": "c",
+        "actual": "c",
+        "score": 5,
+        "correct": true
+      },
+      {
+        "id": "c/quoted-header",
+        "expected": "c",
+        "actual": "c",
+        "score": 5,
+        "correct": true
+      },
+      {
+        "id": "c/function-pointer",
+        "expected": "c",
+        "actual": "c",
+        "score": 9,
+        "correct": true
+      },
+      {
+        "id": "cpp/c-api-class",
+        "expected": "cpp",
+        "actual": "cpp",
+        "score": 13,
+        "correct": true
+      },
+      {
+        "id": "cpp/containers",
+        "expected": "cpp",
+        "actual": "cpp",
+        "score": 10,
+        "correct": true
+      },
+      {
+        "id": "cpp/smart-pointer",
+        "expected": "cpp",
+        "actual": "cpp",
+        "score": 10,
+        "correct": true
+      },
+      {
+        "id": "cpp/namespace",
+        "expected": "cpp",
+        "actual": "cpp",
+        "score": 5,
+        "correct": true
+      },
+      {
+        "id": "cpp/template",
+        "expected": "cpp",
+        "actual": "cpp",
+        "score": 10,
+        "correct": true
+      },
+      {
+        "id": "cpp/constexpr",
+        "expected": "cpp",
+        "actual": "cpp",
+        "score": 5,
+        "correct": true
+      },
+      {
+        "id": "cpp/c-allocation",
+        "expected": "cpp",
+        "actual": "cpp",
+        "score": 15,
+        "correct": true
+      },
+      {
+        "id": "java/package-class",
+        "expected": "java",
+        "actual": "java",
+        "score": 6,
+        "correct": true
+      },
+      {
+        "id": "java/extends",
+        "expected": "java",
+        "actual": "java",
+        "score": 6,
+        "correct": true
+      },
+      {
+        "id": "java/implements",
+        "expected": "java",
+        "actual": "java",
+        "score": 6,
+        "correct": true
+      },
+      {
+        "id": "java/checked-exception",
+        "expected": "java",
+        "actual": "java",
+        "score": 5,
+        "correct": true
+      },
+      {
+        "id": "java/import-list",
+        "expected": "java",
+        "actual": "java",
+        "score": 6,
+        "correct": true
+      },
+      {
+        "id": "java/static-import",
+        "expected": "java",
+        "actual": "java",
+        "score": 6,
+        "correct": true
+      },
+      {
+        "id": "java/text-block",
+        "expected": "java",
+        "actual": "java",
+        "score": 6,
+        "correct": true
+      },
+      {
+        "id": "csharp/namespace-property",
+        "expected": "csharp",
+        "actual": "csharp",
+        "score": 7,
+        "correct": true
+      },
+      {
+        "id": "csharp/linq",
+        "expected": "csharp",
+        "actual": "csharp",
+        "score": 5,
+        "correct": true
+      },
+      {
+        "id": "csharp/async-task",
+        "expected": "csharp",
+        "actual": "csharp",
+        "score": 5,
+        "correct": true
+      },
+      {
+        "id": "csharp/record",
+        "expected": "csharp",
+        "actual": "csharp",
+        "score": 5,
+        "correct": true
+      },
+      {
+        "id": "csharp/verbatim",
+        "expected": "csharp",
+        "actual": "csharp",
+        "score": 5,
+        "correct": true
+      },
+      {
+        "id": "csharp/interpolated-verbatim",
+        "expected": "csharp",
+        "actual": "csharp",
+        "score": 5,
+        "correct": true
+      },
+      {
+        "id": "csharp/raw-string",
+        "expected": "csharp",
+        "actual": "csharp",
+        "score": 5,
+        "correct": true
+      },
+      {
+        "id": "html/custom-element",
+        "expected": "html",
+        "actual": "html",
+        "score": 10,
+        "correct": true
+      },
+      {
+        "id": "html/embedded-css",
+        "expected": "html",
+        "actual": "html",
+        "score": 5,
+        "correct": true
+      },
+      {
+        "id": "html/embedded-js",
+        "expected": "html",
+        "actual": "html",
+        "score": 5,
+        "correct": true
+      },
+      {
+        "id": "html/attributes",
+        "expected": "html",
+        "actual": "html",
+        "score": 5,
+        "correct": true
+      },
+      {
+        "id": "html/input",
+        "expected": "html",
+        "actual": "html",
+        "score": 5,
+        "correct": true
+      },
+      {
+        "id": "html/form",
+        "expected": "html",
+        "actual": "html",
+        "score": 10,
+        "correct": true
+      },
+      {
+        "id": "xml/declared-html-tags",
+        "expected": "xml",
+        "actual": "xml",
+        "score": 10,
+        "correct": true
+      },
+      {
+        "id": "xml/namespace-html-tags",
+        "expected": "xml",
+        "actual": "xml",
+        "score": 5,
+        "correct": true
+      },
+      {
+        "id": "xml/cdata",
+        "expected": "xml",
+        "actual": "xml",
+        "score": 10,
+        "correct": true
+      },
+      {
+        "id": "xml/processing-instruction",
+        "expected": "xml",
+        "actual": "xml",
+        "score": 10,
+        "correct": true
+      },
+      {
+        "id": "xml/namespaced",
+        "expected": "xml",
+        "actual": "xml",
+        "score": 10,
+        "correct": true
+      },
+      {
+        "id": "xml/attributes",
+        "expected": "xml",
+        "actual": "xml",
+        "score": 10,
+        "correct": true
+      },
+      {
+        "id": "json/keyword-values",
+        "expected": "json",
+        "actual": "json",
+        "score": 10,
+        "correct": true
+      },
+      {
+        "id": "json/nested-array",
+        "expected": "json",
+        "actual": "json",
+        "score": 10,
+        "correct": true
+      },
+      {
+        "id": "json/escapes",
+        "expected": "json",
+        "actual": "json",
+        "score": 10,
+        "correct": true
+      },
+      {
+        "id": "json/empty-object",
+        "expected": "json",
+        "actual": "json",
+        "score": 10,
+        "correct": true
+      },
+      {
+        "id": "json/nested",
+        "expected": "json",
+        "actual": "json",
+        "score": 10,
+        "correct": true
+      },
+      {
+        "id": "css/hash-selector",
+        "expected": "css",
+        "actual": "css",
+        "score": 5,
+        "correct": true
+      },
+      {
+        "id": "css/custom-properties",
+        "expected": "css",
+        "actual": "css",
+        "score": 5,
+        "correct": true
+      },
+      {
+        "id": "css/string-content",
+        "expected": "css",
+        "actual": "css",
+        "score": 5,
+        "correct": true
+      },
+      {
+        "id": "css/media-grid",
+        "expected": "css",
+        "actual": "css",
+        "score": 5,
+        "correct": true
+      },
+      {
+        "id": "css/keyframes",
+        "expected": "css",
+        "actual": "css",
+        "score": 10,
+        "correct": true
+      },
+      {
+        "id": "python/typed-function",
+        "expected": "python",
+        "actual": "python",
+        "score": 5,
+        "correct": true
+      },
+      {
+        "id": "python/context-manager",
+        "expected": "python",
+        "actual": "python",
+        "score": 6,
+        "correct": true
+      },
+      {
+        "id": "python/class",
+        "expected": "python",
+        "actual": "python",
+        "score": 11,
+        "correct": true
+      },
+      {
+        "id": "python/compact-comment",
+        "expected": "python",
+        "actual": "python",
+        "score": 6,
+        "correct": true
+      },
+      {
+        "id": "python/inline-comment",
+        "expected": "python",
+        "actual": "python",
+        "score": 6,
+        "correct": true
+      },
+      {
+        "id": "python/triple-string",
+        "expected": "python",
+        "actual": "python",
+        "score": 5,
+        "correct": true
+      },
+      {
+        "id": "php/class",
+        "expected": "php",
+        "actual": "php",
+        "score": 22,
+        "correct": true
+      },
+      {
+        "id": "php/array",
+        "expected": "php",
+        "actual": "php",
+        "score": 15,
+        "correct": true
+      },
+      {
+        "id": "php/closure",
+        "expected": "php",
+        "actual": "php",
+        "score": 12,
+        "correct": true
+      },
+      {
+        "id": "php/comment",
+        "expected": "php",
+        "actual": "php",
+        "score": 15,
+        "correct": true
+      },
+      {
+        "id": "php/member",
+        "expected": "php",
+        "actual": "php",
+        "score": 7,
+        "correct": true
+      },
+      {
+        "id": "sql/join",
+        "expected": "sql",
+        "actual": "sql",
+        "score": 6,
+        "correct": true
+      },
+      {
+        "id": "sql/quoted-identifiers",
+        "expected": "sql",
+        "actual": "sql",
+        "score": 6,
+        "correct": true
+      },
+      {
+        "id": "sql/compact-comment",
+        "expected": "sql",
+        "actual": "sql",
+        "score": 5,
+        "correct": true
+      },
+      {
+        "id": "sql/inline-comment",
+        "expected": "sql",
+        "actual": "sql",
+        "score": 5,
+        "correct": true
+      },
+      {
+        "id": "sql/cte",
+        "expected": "sql",
+        "actual": "sql",
+        "score": 6,
+        "correct": true
+      },
+      {
+        "id": "sql/update",
+        "expected": "sql",
+        "actual": "sql",
+        "score": 6,
+        "correct": true
+      },
+      {
+        "id": "unknown/object-fields",
+        "expected": "unknown",
+        "actual": "unknown",
+        "score": 0,
+        "correct": true
+      },
+      {
+        "id": "unknown/label",
+        "expected": "unknown",
+        "actual": "unknown",
+        "score": 0,
+        "correct": true
+      },
+      {
+        "id": "unknown/method-shared",
+        "expected": "unknown",
+        "actual": "unknown",
+        "score": 0,
+        "correct": true
+      },
+      {
+        "id": "unknown/shared-import",
+        "expected": "unknown",
+        "actual": "unknown",
+        "score": 0,
+        "correct": true
+      },
+      {
+        "id": "unknown/shared-class",
+        "expected": "unknown",
+        "actual": "unknown",
+        "score": 0,
+        "correct": true
+      },
+      {
+        "id": "unknown/generic",
+        "expected": "unknown",
+        "actual": "unknown",
+        "score": 0,
+        "correct": true
+      },
+      {
+        "id": "unknown/unclosed-string",
+        "expected": "unknown",
+        "actual": "unknown",
+        "score": 0,
+        "correct": true
+      },
+      {
+        "id": "unknown/compact-hash",
+        "expected": "unknown",
+        "actual": "unknown",
+        "score": 0,
+        "correct": true
+      },
+      {
+        "id": "unknown/inline-hash",
+        "expected": "unknown",
+        "actual": "unknown",
+        "score": 0,
+        "correct": true
+      },
+      {
+        "id": "unknown/compact-sql",
+        "expected": "unknown",
+        "actual": "unknown",
+        "score": 0,
+        "correct": true
+      },
+      {
+        "id": "unknown/verbatim-payload",
+        "expected": "unknown",
+        "actual": "unknown",
+        "score": 0,
+        "correct": true
+      },
+      {
+        "id": "unknown/raw-payload",
+        "expected": "unknown",
+        "actual": "unknown",
+        "score": 0,
+        "correct": true
+      },
+      {
+        "id": "unknown/header-in-string",
+        "expected": "unknown",
+        "actual": "unknown",
+        "score": 0,
+        "correct": true
+      },
+      {
+        "id": "unknown/regex-only",
+        "expected": "unknown",
+        "actual": "unknown",
+        "score": 0,
+        "correct": true
+      },
+      {
+        "id": "unknown/json-trailing",
+        "expected": "unknown",
+        "actual": "unknown",
+        "score": 0,
+        "correct": true
+      },
+      {
+        "id": "unknown/json-comment",
+        "expected": "unknown",
+        "actual": "unknown",
+        "score": 0,
+        "correct": true
+      },
+      {
+        "id": "unknown/incomplete-call",
+        "expected": "unknown",
+        "actual": "unknown",
+        "score": 0,
+        "correct": true
+      },
+      {
+        "id": "unknown/incomplete-import",
+        "expected": "unknown",
+        "actual": "unknown",
+        "score": 0,
+        "correct": true
+      },
+      {
+        "id": "unknown/prose-sql",
+        "expected": "unknown",
+        "actual": "unknown",
+        "score": 0,
+        "correct": true
+      },
+      {
+        "id": "unknown/repeated-weak",
+        "expected": "unknown",
+        "actual": "unknown",
+        "score": 0,
+        "correct": true
+      }
+    ]
+  },
+  "exploratory": {
+    "correct": 0,
+    "total": 3,
+    "byLanguage": {
+      "javascript": {
+        "correct": 0,
+        "total": 2
+      },
+      "python": {
+        "correct": 0,
+        "total": 1
+      }
+    },
+    "results": [
+      {
+        "id": "javascript/template-expression",
+        "expected": "javascript",
+        "actual": "unknown",
+        "score": 0,
+        "correct": false
+      },
+      {
+        "id": "javascript/jsx",
+        "expected": "javascript",
+        "actual": "unknown",
+        "score": 0,
+        "correct": false
+      },
+      {
+        "id": "python/match",
+        "expected": "python",
+        "actual": "unknown",
+        "score": 0,
+        "correct": false
+      }
+    ]
+  }
+}

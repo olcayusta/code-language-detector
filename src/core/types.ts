@@ -23,7 +23,7 @@ export interface DetectionContext {
   code: string;
   /** Comments removed, quoted strings preserved. */
   text: string;
-  /** Comments and string contents masked while preserving line breaks. */
+  /** Payloads/comments masked; template expressions and JSX structure retained, with aligned line breaks. */
   syntax: string;
 }
 

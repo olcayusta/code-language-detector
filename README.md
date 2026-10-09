@@ -71,7 +71,7 @@ Metadata sonucu içerik puanlanmadan döndürülür: `source: "metadata"`, `scor
 
 ## Puanlama ve belirsizlik
 
-Her dil dosyası belirleyici yapılara puan verir. Açık PHP etiketi veya doğrulanmış JSON belgesi gibi güçlü işaretler 10, karakteristik yapılar genellikle 5, destekleyici ifadeler 1–3 puan alır. Her kural blok başına yalnızca bir kez puanlanır; aynı kelimenin tekrarları puanı şişirmez.
+Her dil dosyası belirleyici yapılara puan verir. Açık PHP etiketi veya doğrulanmış JSON belgesi gibi güçlü işaretler 10, karakteristik yapılar genellikle 5, destekleyici ifadeler 1–3 puan alır. Her kural blok başına yalnızca bir kez puanlanır; aynı kelimenin tekrarları puanı şişirmez. V2'de aynı kanıtı açıklayan kurallar isteğe bağlı `group` alanıyla gruplanır ve grubun en güçlü eşleşmesi alınır. Örneğin `std::cout` hem namespace hem stream kuralından iki kez puan almaz. Özel dil kurallarının döndürdüğü aynı kural kimliği de bir kez sayılır.
 
 Varsayılan karar koşulları:
 
@@ -112,7 +112,15 @@ Koşullar sağlanmazsa sonuç `unknown` olur. Zayıf veya yakın adaylar yine `c
 - **HTML / XML:** HTML doctype, bilinen HTML etiket çiftleri, XML bildirimi, namespace ve özel etiketler değerlendirilir. Bu bir etiket doğrulayıcısı değildir; ortak yapılar doğaları gereği belirsiz olabilir.
 - **JSON / JavaScript:** Tam metin, `JSON.parse()` ile geçerli bir nesne veya dizi olarak doğrulanırsa JSON tercih edilir. JavaScript içine yerleştirilmiş JSON nesnesi tüm metin olarak geçerli JSON değildir. Tek başına sayı, string veya boolean dil belirlemek için yeterli sayılmaz.
 
-Yorum ve string içerikleri basit bir maskeleme geçişiyle çoğu içerik kuralından çıkarılır. Markup ve başlık kuralları gerektiğinde yorumları çıkarılmış metni kullanır. Bu geçiş tam bir lexer değildir; tüm dil kaçışlarını, regex literal'lerini veya template interpolation yapılarını çözmez. Çok kısa, alışılmadık veya karma dil içeren örneklerde `unknown` ya da hatalı tahmin mümkündür. İlk sürüm karma dil analizi yapmaz.
+Yorum ve string içerikleri basit bir maskeleme geçişiyle çoğu içerik kuralından çıkarılır. V2, boşluksuz/inline `#` ve `--` yorumlarını, kapanmamış stringleri, C# verbatim/raw stringlerini, C++ raw stringlerini ve yaygın JavaScript regex literal bağlamlarını da ele alır. CSS hash seçicileri, hex renkler ve C önişlemci yönergeleri korunur. Markup içinde öznitelik değerleri ve CDATA içeriği etiket kanıtı sayılmaz; yerleşik kurallar bağımsız HTML/XML belgelerinde dış belgeyi sınıflandırır. Özel kayıt kuralları aynı `DetectionContext` alanlarını almaya devam eder.
+
+V2.1, template literal içindeki tamamlanmış `${...}` ifadelerini ayrı kod olarak maskeler ve analiz eder. Normal template metni puanlanmaz. İç içe template'ler, string/yorum/regex içindeki parantezler ve JSX ifadeleri ayırt edilir. SQL başlıklı bağımsız sorgularda backtick'ler sütun/tablo adı olarak maskelenir.
+
+JSX; kod bağlamında tamamlanmış etiketler, fragment'ler veya ifade container'larıyla tanınır. Güçlü TypeScript kanıtı yoksa JavaScript seçilir. Tip anotasyonları, JSX yanında interface/dönüş tipi, `as` dönüşümü ve generic JSX bileşeni TS'yi önceliklendirir. Sadece `<div>Hello</div>` veya `<Widget />` gibi bağımsız düz markup mevcut HTML/XML önceliğini korur; tek başına JSX kanıtı değildir. Eksik etiketler, karşılaştırmalar ve `<T>value` gibi ince/belirsiz örnekler `unknown` kalabilir.
+
+Python için girintili `match`/`case`, guard, capture/wildcard, mapping/sequence ve parantezle devam eden çok satırlı pattern'ler desteklenir. Tek başına `match` veya `case`, aynı seviyede girinti ve yorum/string içindeki sahte bloklar kanıt sayılmaz.
+
+Bu geçiş tam bir lexer veya sözdizimi doğrulayıcısı değildir; tüm dil kaçışlarını ve regex bağlamlarını çözmez. Çok kısa, alışılmadık veya karma dil içeren örneklerde `unknown` ya da hatalı tahmin mümkündür. Karma dil analizi yapılmaz. Ortak nesne alanları ve import/export alias'ları TS tipi sayılmaz; belirgin çağrının kapanış parantezi yoksa tek başına dil kanıtı oluşturmaz. Template/JSX taraması 64 seviyede, çok satırlı Python başlıkları 64 satırda sınırlandırılır.
 
 ## Yeni dil ekleme
 
@@ -166,6 +174,8 @@ scripts/        # Bağımlılıksız yerel demo sunucusu
 
 `npm test`, önce strict TypeScript derlemesini, ardından Node.js'in yerleşik test runner'ını çalıştırır. Testler her dil için tek ve çok satırlı örnekleri; boş, ortak ve belirsiz kodları; JS/TS, C/C++, HTML/XML ve JSON/JS ayrımlarını; metadata ve alias önceliğini; entity ve boşluk korunmasını; DOM'un değişmemesini; inline kodun atlanmasını; birden fazla bloğun bağımsız işlenmesini; özel dil kaydını ve demo örneklerini kapsar.
 
-Test örnekleri bir doğruluk ölçümü değildir; genel kullanım için ölçülmemiş doğruluk yüzdesi iddiası yoktur.
+V2'de her mevcut dil için en az beş ek gerçekçi örnek ve 20 belirsiz/yanıltıcı örnek eklendi. Aynı 102 örnek üzerindeki başlangıç sonucu 60/102, V2 sonucu 102/102'dir. Ayrıca çözülmemiş üç keşif örneği her iki sürümde de başarısızdır; bunlar dahil toplam sonuç 60/105 → 102/105 olur. Bu geliştirme/regresyon kümesi genel kullanım doğruluğu veya bağımsız bir doğrulama kümesi değildir. Tam karşılaştırma, kalan senaryolar ve tekrar çalıştırma yönergeleri [V2 doğruluk raporunda](docs/accuracy-report.md) bulunur.
+
+V2.1'de eski 237 test korunmuş, toplam test sayısı 370'e çıkmıştır. V2'nin üç keşif örneği 0/3 → 3/3, yeni 123 örnek 59/123 → 123/123 olmuştur. İki ileri sözdizimi keşfi hâlâ `unknown` döner; bunlar dahil yeni küme 59/125 → 123/125'tir. Son davranışlar, JSX varsayılanı, sınırlar ve ayrıntılı sonuçlar [V2.1 kararlılık raporunda](docs/accuracy-v21-report.md) açıklanır. Tarihsel V2 ölçüm dosyaları korunur.
 
 Demo sunucusunun entegrasyon testi de ana adresin yönlendirilmesini, CSS ve JavaScript dosyalarının yüklenmesini ve sunucunun yalnızca demo/derleme dosyalarını sunmasını doğrular. Bu test yerel HTTP bağlantısı açar; ağ erişimi kısıtlı ortamlarda test çalıştırıcısına localhost erişimi verilmelidir.

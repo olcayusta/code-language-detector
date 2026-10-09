@@ -8,6 +8,11 @@ export const htmlTags = new Set([
   "canvas", "details", "summary", "iframe", "picture", "figure", "figcaption",
 ]);
 
+export function hasXmlDocumentSignal(text: string): boolean {
+  return /^\s*<\?xml\s+version\s*=/i.test(text)
+    || /^\s*<[A-Za-z][\w:.-]*\b[^<>]*\bxmlns(?::[\w.-]+)?\s*=/.test(text);
+}
+
 export function hasPairedTag(text: string, known: boolean): boolean {
   const opened = new Set<string>();
   for (const match of text.matchAll(/<(\/?)([A-Za-z][\w:.-]*)\b[^<>]*>/g)) {

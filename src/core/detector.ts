@@ -20,7 +20,14 @@ export function createDetector(registry: LanguageRegistry, options: DetectorOpti
     const candidates: LanguageCandidate[] = [];
     const qualified = new Set<string>();
     for (const language of registry.getAll()) {
-      const matches = language.detect(context);
+      // Custom rules may return duplicate IDs; count each evidence item once.
+      const unique = new Map<string, ReturnType<typeof language.detect>[number]>();
+      for (const match of language.detect(context)) {
+        const previous = unique.get(match.rule);
+        if (!previous || match.score > previous.score
+            || (match.score === previous.score && match.distinctive && !previous.distinctive)) unique.set(match.rule, match);
+      }
+      const matches = [...unique.values()];
       const score = matches.reduce((sum, match) => sum + match.score, 0);
       if (score <= 0) continue;
       candidates.push({

@@ -141,3 +141,20 @@ test('demo sample blocks produce their advertised languages', async () => {
   assert.equal(results.length, 15);
   assert.deepEqual(results.map(({ language }) => language), ['javascript', 'typescript', 'php', 'python', 'sql', 'html', 'css', 'json', 'xml', 'java', 'c', 'cpp', 'csharp', 'javascript', 'unknown']);
 });
+
+test('V2 outer markup, JS object fields and explicit metadata work in DOM blocks', () => {
+  const document = dom('<pre></pre><pre></pre><pre data-lang="ts"></pre><pre></pre>');
+  const examples = [
+    '<script>console.log("ready");</script><main>Ready</main>',
+    'const flags = { enabled: boolean }; console.log(flags);',
+    'const flags = { enabled: boolean }; console.log(flags);',
+    '<?xml version="1.0"?><html><body>Ready</body></html>',
+  ];
+  [...document.querySelectorAll('pre')].forEach((pre, index) => { pre.textContent = examples[index]; });
+  const before = document.toString();
+  const results = detectCodeBlocks(document);
+  assert.deepEqual(results.map(({ language }) => language), ['html', 'javascript', 'typescript', 'xml']);
+  assert.deepEqual(results.map(({ source }) => source), ['content', 'content', 'metadata', 'content']);
+  assert.deepEqual(results.map(({ code }) => code), examples);
+  assert.equal(document.toString(), before);
+});
